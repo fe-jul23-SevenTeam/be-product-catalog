@@ -24,12 +24,21 @@
 	},
 	"homepage": "https://github.com/fe-jul23-SevenTeam/be-product-catalog#readme",
 	"dependencies": {
+		"@types/cors": "^2.8.15",
+		"cors": "^2.8.5",
 		"dotenv": "^16.3.1",
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"pg": "^8.11.3",
+		"pg-hstore": "^2.3.4",
+		"reflect-metadata": "^0.1.13",
+		"sequelize": "^6.33.0",
+		"sequelize-typescript": "^2.1.5",
+		"sqlite3": "^5.1.6"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.20",
 		"@types/node": "^20.8.7",
+		"@types/validator": "^13.11.5",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
 		"@typescript-eslint/parser": "^6.8.0",
 		"eslint": "^8.52.0",
@@ -40,8 +49,8 @@
 		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2"
 	},
-  "lint-staged": {
-    "*.ts": "npm run fix-style",
-    "*.js": "npm run fix-style"
-  }
+	"lint-staged": {
+		"*.ts": "npm run fix-style",
+		"*.js": "npm run fix-style"
+	}
 }
