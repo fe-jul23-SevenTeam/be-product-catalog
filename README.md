@@ -1,1 +1,25 @@
-# be-product-catalog
+# /phones - get all the phones present in database
+
+# /phones/id - get phones by id
+
+phones example:
+
+```
+    {
+        "id": 1,
+        "category": "phones",
+        "phoneId": "apple-iphone-7-32gb-black",
+        "itemId": "apple-iphone-7-32gb-black",
+        "name": "Apple iPhone 7 32GB Black",
+        "fullPrice": 400,
+        "price": 375,
+        "screen": "4.7' IPS",
+        "capacity": "32GB",
+        "color": "black",
+        "ram": "2GB",
+        "year": 2016,
+        "image": "http://localhost:443/images/img/phones/apple-iphone-7/black/00.jpg"
+    },
+```
+
+# /images/path-to-image - get the image

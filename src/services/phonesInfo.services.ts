@@ -4,13 +4,15 @@ import { PhonesInfoModel } from '../DBconnection';
 import { PhoneInfo } from '../types';
 
 const getAll = async () => {
-	const phones = await PhonesInfoModel.findAll();
+	const phones = await PhonesInfoModel.findAll().then(dataArr =>
+		dataArr.map(data => data?.dataValues)
+	);
 
 	return phones;
 };
 
 const getById = async (id: string) => {
-	const phone = await PhonesInfoModel.findByPk(id);
+	const phone = await PhonesInfoModel.findByPk(id).then(data => data?.dataValues);
 
 	return phone;
 };

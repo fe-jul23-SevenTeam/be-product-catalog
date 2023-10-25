@@ -12,4 +12,6 @@ export type PhoneInfo = {
 	ram: string;
 	year: number;
 	image: string;
+	createdAt?: string;
+	updatedAt?: string;
 };
