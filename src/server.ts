@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 
 import { router as phonesRouter } from './routes/phonesInfo.router';
+import { getImage } from './controllers/images.controller';
 
 const PORT = process.env.SERVER_PORT;
 const HOST = process.env.SERVER_HOST;
@@ -17,7 +18,9 @@ export const server = express();
 const corsOptions = {
 	origin: [USER_HOST!, USER_HOST_DEV!],
 };
+
 server.use('/phones', cors(corsOptions), express.json(), phonesRouter);
+server.use('/images', cors(corsOptions), getImage);
 
 server.listen(PORT, () => {
 	// eslint-disable-next-line
