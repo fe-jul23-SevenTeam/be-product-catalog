@@ -16,7 +16,7 @@ export const server = express();
 
 // TODO check TS
 const corsOptions = {
-	origin: [USER_HOST!, USER_HOST_DEV!],
+	origin: [USER_HOST ?? '', USER_HOST_DEV ?? ''],
 };
 
 server.use('/phones', cors(corsOptions), express.json(), phonesRouter);

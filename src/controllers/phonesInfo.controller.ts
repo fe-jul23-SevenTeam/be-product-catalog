@@ -1,12 +1,16 @@
 import { Request, Response } from 'express';
 import PhonesInfoServices from '../services/phonesInfo.services';
 import responseCodes from '../constants/responseCodes';
+import { normalizePhoneInfo } from '../helpers';
 
 // TODO PAGINATION
 const getAll = async (req: Request, res: Response) => {
 	const phones = await PhonesInfoServices.getAll();
 
-	res.send(phones);
+	const normalizedPhones = phones.map(normalizePhoneInfo);
+
+	res.statusCode = responseCodes.SUCCESS;
+	res.send(normalizedPhones);
 };
 
 const getOneById = async (req: Request, res: Response) => {
@@ -20,8 +24,10 @@ const getOneById = async (req: Request, res: Response) => {
 		return;
 	}
 
+	const normalizedPhone = normalizePhoneInfo(phone);
+
 	res.statusCode = responseCodes.SUCCESS;
-	res.send(phone);
+	res.send(normalizedPhone);
 };
 
 export default {
