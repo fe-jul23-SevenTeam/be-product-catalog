@@ -1,6 +1,6 @@
 # /products - get all the products present in database
 
-# /products/id - get product by id
+# /products/"id" - get product by id
 
 products example:
 
@@ -22,11 +22,13 @@ products example:
     }
 ```
 
-# /images/path-to-image - get the image
+# /images/"path-to-image-on-be" - get the image
 
-# /tablets - get all tablets
+# /products-info/"category" - get information about device by category
 
-# /tablets/id - get all table by id
+Categories: phones, tablets, accessories
+
+# /products-info/find/"id" - get a device by id
 
 tablets example:
 

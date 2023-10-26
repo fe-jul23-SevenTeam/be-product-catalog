@@ -3,5 +3,5 @@ import { tabletsController } from '../controllers';
 
 export const router = express.Router();
 
-router.get('/', tabletsController.getAll);
-router.get('/:id', tabletsController.getOneById);
+router.get('/:category', tabletsController.getByCategory);
+router.get('/find/:id', tabletsController.getOneById);

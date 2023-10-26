@@ -3,10 +3,10 @@ import { sequelize } from './DBconnection';
 
 @Table({
 	timestamps: true,
-	tableName: 'tablets',
-	modelName: 'Tablets',
+	tableName: 'products_info',
+	modelName: 'ProductsInfo',
 })
-export class Tablets extends Model {
+export class ProductsInfo extends Model {
 	@Column({
 		type: DataType.TEXT,
 		primaryKey: true,
@@ -64,7 +64,10 @@ export class Tablets extends Model {
 
 	@Column(DataType.TEXT)
 	cell: string;
+
+	@Column(DataType.TEXT)
+	category: string;
 }
 
-sequelize.addModels([Tablets]);
-// Tablets.sync({ force: true }); // will delete all data from DB
+sequelize.addModels([ProductsInfo]);
+// ProductsInfo.sync({ force: true }); // will delete all data from DB

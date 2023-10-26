@@ -1,4 +1,4 @@
-export type GadgetNormalized = {
+export type ProductInfoNormalized = {
 	id: string;
 	namespaceId: string;
 	name: string;
@@ -17,6 +17,7 @@ export type GadgetNormalized = {
 	camera: string;
 	zoom: string;
 	cell: string[];
+	category?: string;
 	createdAt?: string;
 	updatedAt?: string;
 };
