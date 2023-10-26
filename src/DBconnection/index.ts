@@ -1,2 +1,3 @@
 export * from './DBconnection';
-export * from './phonesInfo.model';
+export * from './products.model';
+export * from './tablets.model';

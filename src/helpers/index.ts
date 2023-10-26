@@ -1,1 +1,1 @@
-export * from './normalizePhoneInfo';
+export * from './normalizeProduct';

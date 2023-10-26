@@ -22,12 +22,6 @@ export const getImage = (req: Request, res: Response) => {
 		}
 	});
 
-	readStream.on('error', () => {
-		res.sendStatus(responseCodes.BAD_REQUEST);
-
-		return;
-	});
-
 	readStream.on('close', () => {
 		readStream.destroy();
 
