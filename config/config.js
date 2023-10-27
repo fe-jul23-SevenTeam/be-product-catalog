@@ -1,4 +1,5 @@
-require('dotenv').config()
+/* eslint-disable */ 
+require('dotenv').config();
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
 const db_config = {

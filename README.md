@@ -8,7 +8,6 @@ products example:
     {
         "id": 1,
         "category": "phones",
-        "phoneId": "apple-iphone-7-32gb-black",
         "itemId": "apple-iphone-7-32gb-black",
         "name": "Apple iPhone 7 32GB Black",
         "fullPrice": 400,

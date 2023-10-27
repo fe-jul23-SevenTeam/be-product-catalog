@@ -10,10 +10,13 @@ export class Products extends Model {
 	@Column(DataType.TEXT)
 	category: string;
 
-	@Column(DataType.TEXT)
-	phoneId: string;
-
-	@Column(DataType.TEXT)
+	@Column({
+		type: DataType.TEXT,
+		references: {
+			model: 'products_info',
+			key: 'id',
+		},
+	})
 	itemId: string;
 
 	@Column(DataType.TEXT)
