@@ -2,6 +2,10 @@
 
 # /products/"id" - get product by id
 
+# /products?page=1&pageSize=150&category=tablets&sortBy=name - query params that are available
+
+sortBy: year, name, price, best-prices
+
 products example:
 
 ```
@@ -23,13 +27,9 @@ products example:
 
 # /images/"path-to-image-on-be" - get the image
 
-# /products-info/"category" - get information about device by category
-
-Categories: phones, tablets, accessories
-
 # /products-info/find/"id" - get a device by id
 
-tablets example:
+product-info example:
 
 ```
   {
