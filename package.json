@@ -10,7 +10,9 @@
 		"format": "prettier ./src --write",
 		"lint": "eslint ./src --fix",
 		"fix-style": "npm run format & npm run lint",
-		"prepare": "husky install"
+		"prepare": "husky install",
+    "fillDb": "npx sequelize-cli db:seed:all",
+    "build": "npx sequelize-cli db:migrate"
 	},
 	"repository": {
 		"type": "git",
