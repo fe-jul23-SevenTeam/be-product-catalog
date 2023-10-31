@@ -1,7 +1,7 @@
-import { Sequelize } from 'sequelize';
+import { Order, Sequelize } from 'sequelize';
 import { RequestQuery, ProductsQueryParams } from '../types';
 
-const getOrder = (sortBy: string) => {
+const getOrder = (sortBy: string): Order | undefined => {
 	switch (sortBy) {
 		case 'newest':
 			return [['year', 'DESC']];
@@ -13,10 +13,10 @@ const getOrder = (sortBy: string) => {
 			return [['price', 'ASC']];
 
 		case 'best-price':
-			return [['fullPrice', Sequelize.literal('-'), 'price', 'DESC']];
+			return [['fullPrice', Sequelize.literal(' - "price"'), 'DESC']];
 
 		default:
-			return null;
+			return;
 	}
 };
 

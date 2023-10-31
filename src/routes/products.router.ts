@@ -5,3 +5,4 @@ export const router = express.Router();
 
 router.get('/', productsController.getAll);
 router.get('/:id', productsController.getOneById);
+router.get('/length/:category', productsController.getLengthByCategory);

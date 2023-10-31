@@ -1,10 +1,9 @@
 import { ProductsQueryParams } from './products-query-params.type';
+import { Order } from 'sequelize';
 
 export type RequestQuery = {
 	where?: ProductsQueryParams;
 	limit?: number;
 	offset?: number;
-	// eslint-disable-next-line
-	order?: any;
-	// order?: [string, Literal | string, string | undefined][];
+	order?: Order;
 };

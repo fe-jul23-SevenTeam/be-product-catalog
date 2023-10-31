@@ -4,9 +4,7 @@
 
 # /products?page=1&pageSize=150&category=tablets&sortBy=name - query params that are available
 
-sortBy: year, name, price, best-prices
-
-products example:
+sortBy: year, name, price, best-prices products example:
 
 ```
     {
@@ -23,6 +21,16 @@ products example:
         "year": 2016,
         "image": "http://localhost:443/images/img/phones/apple-iphone-7/black/00.jpg"
     }
+```
+
+# /products/length/"category" - get length of products
+
+response example:
+
+```
+  {
+    length: 30,
+  }
 ```
 
 # /images/"path-to-image-on-be" - get the image

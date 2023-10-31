@@ -7,32 +7,60 @@ import { normalizeProduct } from '../helpers';
 const getAll = async (req: Request, res: Response) => {
 	const params = req.query;
 
-	const phones = await productServices.getAll(params);
+	const products = await productServices.getAll(params);
 
-	const normalizedPhones = phones.map(normalizeProduct);
+	const normalizedProducts = products.map(normalizeProduct);
 
 	res.statusCode = responseCodes.SUCCESS;
-	res.send(normalizedPhones);
+	res.send(normalizedProducts);
 };
 
 const getOneById = async (req: Request, res: Response) => {
 	const { id } = req.params;
 
-	const phone = await productServices.getById(id);
+	if (isNaN(+id)) {
+		res.sendStatus(responseCodes.BAD_REQUEST);
 
-	if (!phone) {
+		return;
+	}
+
+	const product = await productServices.getById(id);
+
+	if (!product) {
 		res.sendStatus(responseCodes.NOT_FOUND);
 
 		return;
 	}
 
-	const normalizedPhone = normalizeProduct(phone);
+	const normalizedProduct = normalizeProduct(product);
 
 	res.statusCode = responseCodes.SUCCESS;
-	res.send(normalizedPhone);
+	res.send(normalizedProduct);
+};
+
+const getLengthByCategory = async (req: Request, res: Response) => {
+	const { category } = req.params;
+
+	if (!category) {
+		res.sendStatus(responseCodes.BAD_REQUEST);
+
+		return;
+	}
+
+	const length = await productServices.getLengthByCategory(category);
+
+	if (!length) {
+		res.sendStatus(responseCodes.NOT_FOUND);
+
+		return;
+	}
+
+	res.statusCode = responseCodes.SUCCESS;
+	res.send({ length });
 };
 
 export const productsController = {
 	getAll,
 	getOneById,
+	getLengthByCategory,
 };
