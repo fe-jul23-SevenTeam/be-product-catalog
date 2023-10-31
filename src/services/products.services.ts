@@ -7,20 +7,31 @@ import { getPreparedRequestQuery } from '../helpers';
 const getAll = async (params: ProductsQueryParams) => {
 	const requestQuery = getPreparedRequestQuery(params);
 
-	const phones = await Products.findAll(requestQuery).then(dataArr =>
+	const products = await Products.findAll(requestQuery).then(dataArr =>
 		dataArr.map(data => data?.dataValues)
 	);
 
-	return phones;
+	return products;
 };
 
 const getById = async (id: string) => {
-	const phone = await Products.findByPk(id).then(data => data?.dataValues);
+	const product = await Products.findByPk(id).then(data => data?.dataValues);
 
-	return phone;
+	return product;
+};
+
+const getLengthByCategory = async (category: string) => {
+	const length = await Products.count({
+		where: {
+			category,
+		},
+	});
+
+	return length;
 };
 
 export const productServices = {
 	getAll,
 	getById,
+	getLengthByCategory,
 };
