@@ -3,13 +3,13 @@ import { RequestQuery, ProductsQueryParams } from '../types';
 
 const getOrder = (sortBy: string) => {
 	switch (sortBy) {
-		case 'age':
+		case 'newest':
 			return [['year', 'DESC']];
 
-		case 'title':
+		case 'alphabetically':
 			return [['name', 'DESC']];
 
-		case 'price':
+		case 'cheapest':
 			return [['price', 'ASC']];
 
 		case 'best-price':
