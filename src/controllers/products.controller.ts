@@ -5,7 +5,9 @@ import { normalizeProduct } from '../helpers';
 
 // TODO PAGINATION
 const getAll = async (req: Request, res: Response) => {
-	const phones = await productServices.getAll();
+	const params = req.query;
+
+	const phones = await productServices.getAll(params);
 
 	const normalizedPhones = phones.map(normalizeProduct);
 

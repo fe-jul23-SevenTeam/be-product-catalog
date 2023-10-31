@@ -1,10 +1,15 @@
 'use strict';
 
 import { Products } from '../DBconnection';
-import { Product } from '../types';
+import { ProductsQueryParams } from '../types';
+import { getPreparedRequestQuery } from '../helpers';
 
-const getAll = async () => {
-	const phones = await Products.findAll().then(dataArr => dataArr.map(data => data?.dataValues));
+const getAll = async (params: ProductsQueryParams) => {
+	const requestQuery = getPreparedRequestQuery(params);
+
+	const phones = await Products.findAll(requestQuery).then(dataArr =>
+		dataArr.map(data => data?.dataValues)
+	);
 
 	return phones;
 };
@@ -15,15 +20,7 @@ const getById = async (id: string) => {
 	return phone;
 };
 
-// needed for filling DB
-const add = async (phoneInfo: Product) => {
-	const preparedPhone = await Products.create(phoneInfo);
-
-	return preparedPhone;
-};
-
 export const productServices = {
 	getAll,
 	getById,
-	add,
 };
