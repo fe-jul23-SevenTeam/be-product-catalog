@@ -27,7 +27,7 @@ products example:
 
 # /images/"path-to-image-on-be" - get the image
 
-# /products-info/find/"id" - get a device by id
+# /products-info/"itemId" - get a device by id
 
 product-info example:
 
