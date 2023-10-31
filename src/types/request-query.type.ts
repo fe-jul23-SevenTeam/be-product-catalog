@@ -1,3 +1,4 @@
+import { Order } from 'sequelize';
 import { ProductsQueryParams } from './products-query-params.type';
 import { Order } from 'sequelize';
 

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #293462;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 40px;
+    color: #D61C4E 
+  }
+
+  a {
+    color: #ffa71a;
+  }
+
+  h2 {
+    color: #D61C4E;
+    font-size: 25px;
+    font-weight: 300px;
+  }
+
+
+  h4 {
+    color: #FEB139;
+    font-size: 20px;
+  }
+
+  header {
+    max-width: 1200px;
+    margin: auto;
+    border-bottom: solid 2px #2b46b3;;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+</style>
+
+<body >
+  <header>
+    <h1>Documentation</h1>
+    <h3 style="color: #FEB139;">More details you may find by checking our
+      <a target="_blank" href="https://github.com/fe-jul23-SevenTeam/be-product-catalog.git">GitHub</a>
+    </h3>
+  </header>
+
+  <main>
+    <section>
+      <h2>
+        /products - get all the products present in database
+      </h2>
+
+      <h2>
+        /products/"id" - get product by id
+      </h2>
+
+      <h2>
+        /products?page=1&pageSize=150&category=tablets&sortBy=name - query params that are available
+      </h2>
+
+      <h4>
+        SortBy categories:
+      </h4>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <h5 style="color: #FFF80A; margin: 0; padding: 20px; background-color: #2b46b3; border-radius: 20px; font-size: 20px;">
+          newest
+        </h5>
+        
+        <h5 style="color: #FFF80A; margin: 0; padding: 20px; background-color: #2b46b3; border-radius: 20px; font-size: 20px;">
+          alphabetically
+        </h5>
+
+        <h5 style="color: #FFF80A; margin: 0; padding: 20px; background-color: #2b46b3; border-radius: 20px; font-size: 20px;">
+          cheapest
+        </h5>
+
+        <h5 style="color: #FFF80A; margin: 0; padding: 20px; background-color: #2b46b3; border-radius: 20px; font-size: 20px;">
+          best-prices
+        </h5>
+
+        <h5 style="color: #FFF80A; margin: 0; padding: 20px; background-color: #2b46b3; border-radius: 20px; font-size: 20px;">
+          recommended
+        </h5>
+
+      </div>
+
+      <h4>
+        Product example:
+      </h4>
+
+      <div style="background-color: #2b46b3; padding: 20px; border-radius: 20px; display: flex; flex-direction: column;">
+        <span style="color: white; font-weight: 500;">{</span>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"id":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">1</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"category":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"phones"</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"itemId":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"apple-iphone-7-32gb-black"</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"name":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Apple iPhone 7 32GB Black"</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"fullPrice":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">400</span>
+          </div>
+         
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"screen":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"4.7' IPS"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"capacity":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"32GB"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"color":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"black"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"ram":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"2GB"</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"year":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">2016</span>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"image":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"http://localhost:443/images/img/phones/apple-iphone-7/black/00.jpg"</span>
+          </div>
+        <span style="color: white; font-weight: 500;">}</span>
+      </div>
+
+    </section>
+
+    <section style="padding-top: 50px;">
+      <h2>
+        /products/length/"category" - get number of products by category
+      </h2>
+
+      <h4>
+        Response example:
+      </h4>
+
+      <div style="background-color: #2b46b3; padding: 20px; border-radius: 20px; display: flex; flex-direction: column;">
+        <span style="color: white; font-weight: 500;">{</span>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"length":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">13</span>
+          </div>
+        <span style="color: white; font-weight: 500;">}</span>
+      </div>
+    </section>
+
+    <section style="padding-top: 50px;">
+      <h2>
+        /images/"path to image" - get an image
+      </h2>
+    </section>
+
+    <section style="padding-top: 50px;">
+      <h2>
+        /products-info/"itemId" - get full information about product by itemId
+      </h2>
+
+      <h4>
+        Response example:
+      </h4>
+
+      <div style="background-color: #2b46b3; padding: 20px; border-radius: 20px; display: flex; flex-direction: column;">
+        <span style="color: white; font-weight: 500;">{</span>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"id":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"apple-ipad-pro-11-2021-256gb-spacegray"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"namespaceId":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;"> "apple-ipad-pro-11-2021"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"name":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Apple iPad Pro 11 (2021) 256GB Space Gray"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"capacityAvailable":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">["128GB", "256GB", "512GB", "1TB", "2TB"]</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"priceRegular":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">829</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"priceDiscount":</span>
+            <span style="color: #7affdc; padding-left: 10px; font-weight: 400;">799</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"colorsAvailable":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;"> ["spacegray", "silver"]</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"color":</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"spacegray"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"images":</span>
+              <div style="color: white; font-weight: 500; padding-left: 15px; display: flex; flex-direction: column; gap: 5px;">[
+                <span style="color: #ff9500; padding-left: 20px; font-weight: 400;">"img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",</span>
+                <span style="color: #ff9500; padding-left: 20px; font-weight: 400;">"img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",</span>
+                <span style="color: #ff9500; padding-left: 20px; font-weight: 400;">"img/tablets/apple-ipad-pro-11-2021/spacegray/02.webp",</span>
+              ]</div>
+          </div>
+
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"description":</span>
+              <div style="color: white; font-weight: 500; padding-left: 15px; display: flex; flex-direction: column; gap: 5px;">[
+                <div style="color: white; font-weight: 500; padding-left: 20px; display: flex; flex-direction: column; gap: 5px;">{
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"title":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;"> "Powerful Performance"</span>
+                  </div>
+
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"text":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">[
+                      "Enjoy a vibrant and immersive visual experience on the iPad Pro 11's Liquid Retina display. With ProMotion technology and True Tone, the display adapts to your environment, providing smooth scrolling, precise color accuracy, and incredible detail.",
+                      "From watching movies to editing videos, the iPad Pro 11's display brings your content to life with stunning clarity."
+                    ]</span>
+                  </div>
+                }</div>
+
+                <div style="color: white; font-weight: 500; padding-left: 20px; display: flex; flex-direction: column; gap: 5px;">{
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"title":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Stunning Liquid Retina Display"</span>
+                  </div>
+
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"text":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">[
+                      "Enjoy a vibrant and immersive visual experience on the iPad Pro 11's Liquid Retina display. With ProMotion technology and True Tone, the display adapts to your environment, providing smooth scrolling, precise color accuracy, and incredible detail.",
+                      "From watching movies to editing videos, the iPad Pro 11's display brings your content to life with stunning clarity."
+                    ]</span>
+                  </div>
+                }</div>
+
+                <div style="color: white; font-weight: 500; padding-left: 20px; display: flex; flex-direction: column; gap: 5px;">{
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"title":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Versatile Camera System"</span>
+                  </div>
+
+                  <div style="display: flex; gap: 5px; color: white;">
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"text":</span>
+                    <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">[
+                      "Capture stunning photos and videos with the iPad Pro 11's advanced camera system. Featuring a 12MP Ultra Wide front camera and a 12MP Wide rear camera with LiDAR scanner, you can take high-quality shots and enjoy augmented reality experiences.",
+                      "Whether you're video calling, scanning documents, or recording 4K videos, the iPad Pro 11's camera system delivers exceptional performance."
+                    ]</span>
+                  </div>
+                }</div>
+              ]</div>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"screen"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"11' Liquid Retina"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"resolution""</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"2388x1668</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"processor"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Apple M1"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"ram"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"8GB"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"camera"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"12MP + 12MP"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"zoom"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"Digital zoom up to 5x"</span>
+          </div>
+          <div style="display: flex; gap: 5px; color: white;">
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">"cell"</span>
+            <span style="color: #ff9500; padding-left: 10px; font-weight: 400;">["Not applicable"]</span>
+          </div>
+        <span style="color: white; font-weight: 500;">}</span>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #1b2240; padding: 50px; margin-top:  50px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;">
+    <h1>&#x301D;knowledge is power&#x301E;</h1>
+    <h1>Francis Bacon</h1>
+  </footer>
+</body>
+
+</html>

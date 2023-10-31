@@ -3,7 +3,6 @@ import { productServices } from '../services';
 import responseCodes from '../constants/responseCodes';
 import { normalizeProduct } from '../helpers';
 
-// TODO PAGINATION
 const getAll = async (req: Request, res: Response) => {
 	const params = req.query;
 
