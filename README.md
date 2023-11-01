@@ -4,7 +4,9 @@
 
 # /products?page=1&pageSize=150&category=tablets&sortBy=name - query params that are available
 
-sortBy: year, name, price, best-prices products example:
+sortBy: newest, alphabetically, cheapest, best-prices, recommended
+
+product example:
 
 ```
     {
