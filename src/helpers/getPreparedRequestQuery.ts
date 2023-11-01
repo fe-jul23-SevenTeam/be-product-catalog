@@ -1,5 +1,6 @@
 import { Order, Sequelize } from 'sequelize';
 import { RequestQuery, ProductsQueryParams } from '../types';
+import { sequelize } from '../DBconnection';
 
 const getOrder = (sortBy: string): Order | undefined => {
 	switch (sortBy) {
@@ -15,6 +16,9 @@ const getOrder = (sortBy: string): Order | undefined => {
 		case 'best-price':
 			return [['fullPrice', Sequelize.literal(' - "price"'), 'DESC']];
 
+		case 'recommended':
+			return sequelize.random();
+
 		default:
 			return;
 	}
@@ -27,9 +31,13 @@ export const getPreparedRequestQuery = (params: ProductsQueryParams): RequestQue
 		requestQuery.where = { category: params.category };
 	}
 
-	if (params.pageSize) {
+	if (params.pageSize && !isNaN(+params.pageSize)) {
 		requestQuery.limit = +params.pageSize;
-		requestQuery.offset = (+(params.page ?? 1) - 1) * requestQuery.limit;
+
+		const page = +(params.page ?? 1);
+		const normalizedPage = isNaN(page) ? 1 : page;
+
+		requestQuery.offset = (normalizedPage - 1) * requestQuery.limit;
 	}
 
 	if (params.sortBy) {
