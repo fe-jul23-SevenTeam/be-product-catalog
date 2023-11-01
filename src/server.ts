@@ -7,7 +7,7 @@ import cors from 'cors';
 import { router as Products } from './routes/products.router';
 import { router as ProductsInfo } from './routes/product-info.router';
 
-import { getImage } from './controllers';
+import { getDefaultPage, getImage } from './controllers';
 
 const PORT = process.env.SERVER_PORT;
 const HOST = process.env.SERVER_HOST;
@@ -24,6 +24,7 @@ server.use('/products-info', cors(corsOptions), express.json(), ProductsInfo);
 server.use('/products', cors(corsOptions), express.json(), Products);
 
 server.use('/images', cors(corsOptions), getImage);
+server.use('/', cors(corsOptions), getDefaultPage);
 
 server.listen(PORT, () => {
 	// eslint-disable-next-line
